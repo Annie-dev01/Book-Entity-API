@@ -1,5 +1,8 @@
 import express from 'express';
 
+import { v4 as uuidv4 } from 'uuid';
+
+
 const router = express.Router();
 
 const books = [
@@ -39,9 +42,8 @@ router.get('/book/:id', (req, res) =>{
 router.post('/', (req, res) =>{
 const book = (req.body);
 
-console.log('book');
 
-books.push(book);
+books.push({ ...book, id: uuidv4()});
 
 res.send(`Book with the name ${book.bookTitle} added to the database!`);
 });
