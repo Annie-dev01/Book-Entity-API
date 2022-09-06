@@ -36,8 +36,14 @@ router.get('/book/:id', (req, res) =>{
 
 });
 
-router.post('/books', (req, res) =>{
+router.post('/', (req, res) =>{
+const book = (req.body);
 
+console.log('book');
+
+books.push(book);
+
+res.send(`Book with the name ${book.bookTitle} added to the database!`);
 });
 
 router.patch('/books/:id', (req, res) =>{
