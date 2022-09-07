@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 const router = express.Router();
 
-const books = [
+let books = [
   {
     bookTitle: "JS Fundamentals",
   authorName: "John Doe",
@@ -35,7 +35,14 @@ console.log(books);
 res.send(books);
 });
 
-router.get('/book/:id', (req, res) =>{
+router.get('/:id', (req, res) =>{
+
+const { id } = req.params;
+
+const foundBooks = books.find(book => book.id == id);
+
+
+  res.send(foundBooks);
 
 });
 
@@ -48,12 +55,25 @@ books.push({ ...book, id: uuidv4()});
 res.send(`Book with the name ${book.bookTitle} added to the database!`);
 });
 
-router.patch('/books/:id', (req, res) =>{
+router.patch('/:id', (req, res) =>{
+  const { id } = req.params;
+  const {bookTitle, authorName, numberOfPages, price } = req.body;
 
-});
+  const book = books.find((book) => book.id == id);
+if(bookTitle) book.bookTitle = bookTitle;
+if(authorName) book.authorName = authorName;
+if(numberOfPages) book.numberOfPages = numberOfPages;
+if(price) book.price = price;
 
-router.delete('/books/:id', (req, res) =>{
+res.send(`Book with the id ${id} has been updated.`);
+})
 
+router.delete('/:id', (req, res) =>{
+ const { id } = req.params;
+
+ books = books.filter((book) => book.id !== id);
+
+ res.send(`Book with the id ${id} deleted from the database.`);
 });
 
 export default router;
