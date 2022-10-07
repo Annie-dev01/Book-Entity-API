@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+ 
 let books = [{
 	"bookTitle": "JS Fundamentals",
 	"authorName": "John Doe",
@@ -62,5 +63,4 @@ export const deleteBook = (req, res) => {
 	const { id } = req.params;
 	books = books.filter((book) => book.id !== id);
 	res.send(`Book with the id ${id} deleted from the database.`); 
-}
-    
+
