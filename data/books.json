@@ -1,22 +1,3 @@
-[{
-  "bookTitle": "JS Fundamentals",
-  "authorName": "John Doe",
-  "numberOfPages": "300",
-  "price": "$20",
-  "ratings": "5 star"
-
-},
-{
-  "bookTitle": "Modern JavaScript",
-  "authorName": "Jane Doe",
-  "numberOfPages": "400",
-  "price": "$30",
-  "ratings": "5 star"
-},
-{
-  "bookTitle": "Advanced JavaScript",
-  "authorName": "Jonny Doe",
-  "numberOfPages": "400",
-  "price": "$35",
-  "ratings": "5 star"
-}]
+[{"bookTitle":"JS Fundamentals","authorName":"John Doe","numberOfPages":"300","price":"$20","ratings":"5 star","id":"df5fac54-6bf0-421c-a476-df5405fdac3f"},
+{"bookTitle":"Advanced JavaScript","authorName":"Jonny Doe","numberOfPages":"400","price":"$35","ratings":"5 star","id":"aad84636-c92c-4ee4-9f36-9e20103dc3d1"},
+{"bookTitle":"Modern JavaScript","authorName":"Jane Doe","numberOfPages":"500","price":"$30","ratings":"5 star","id":"e434d1f3-e2b3-4199-808e-bae71626d21d"}]
