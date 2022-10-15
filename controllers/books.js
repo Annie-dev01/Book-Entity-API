@@ -1,8 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import fs from 'fs';
 
-    
-
 export const getBooks = (req, res) => {
 	const books  = JSON.parse(fs.readFileSync('./data/books.json'));
 	res.send(books);
@@ -13,8 +11,8 @@ export const createBook = (req, res) => {
 	const book = req.body;
 	books.push({ ...book, id: uuidv4()});
 	fs.writeFileSync('./data/books.json', JSON.stringify(books), 'utf-8')
-	res.send(`Book with the name ${book.bookTitle} added to the database!`);
-}
+	res.send(`Book with the name ${book.bookTitle} added to the database!`)
+  }
 
 export const getBook = (req, res) => {
 	const books  = JSON.parse(fs.readFileSync('./data/books.json'));
@@ -63,4 +61,6 @@ export const deleteBook = (req, res) => {
 	
 	res.send(`Book with the id ${id} deleted from the database.`); 
 }
+
+
 
